@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: Poppins-light;
+  src: url(./assets/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Poppins-bold;
+  src: url(./assets/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Josefin-sans;
+  src: url(./assets/static/JosefinSans-Light.ttf);
+}
+
+@font-face {
+  font-family: Josefin-sans-bold;
+  src: url(./assets/static/JosefinSans-Bold.ttf);
+}
+
+.bolder {
+  font-family: Poppins-bold;
+}
+
+.light {
+  font-family: Poppins-light;
+}
+
+.bolder2 {
+  font-family: Josefin-sans-bold;
+}
+
+.light2 {
+  font-family: Josefin-sans;
+}
+/* for the nav bar */
+.heading {
+  @apply font-[Josefin-sans-bold] fixed top-0 left-0 p-3 z-30 bg-black bg-blend-overlay h-screen w-[150px] md:h-screen p-4;
+}
+
+.slide-in {
+  @apply translate-x-[0x] transition-transform duration-300;
+}
+
+.slide-out {
+  @apply -translate-x-full transition-transform duration-300;
+}
+
+/* for the nav list */
+
+.list {
+  @apply text-sm text-white grid gap-12 justify-center items-center md:justify-evenly;
+}
+
+.header-button {
+  @apply hover:text-red-500 cursor-pointer transition-all duration-200;
+}
+
+.heroSection {
+  @apply h-[310px] w-full p-2 bg-[url('./assets/herobg.jpg')] bg-cover md:h-[500px];
+}
+
+.button-theme {
+  @apply bg-[#FFD700] rounded-[20px] text-white p-3 text-sm mt-4 hover:text-black hover:bg-white hover:transition-all duration-200 ;
+}
+
+.menu {
+  @apply bg-black  rounded-[10px] border-1 border-white p-1 w-[40px] h-[35px];
+}
+
+.cta {
+  @apply mt-4 text-center w-full bg-[url('/src/assets/cta2.jpg')] bg-cover bg-center bg-black/20 h-[300px] md:bg-cover h-[300px] w-full;
+}
+
+.card{
+  @apply w-[300px] h-[350px] rounded-[15px] shadow-xl shadow-[5px_5px_10px_20px_40px_#FFFF] ;
+}
+
+/* Card divs is for the container holding all the cards */
+.card-divs{
+@apply grid justify-center items-center text-center gap-[30px] md:flex 
+}
+
+.card-img{
+  @apply flex justify-center rounded-[15px] ;
+}
+
+
+.general-card{
+  @apply p-[10px] rounded-[15px] h-[350px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
+}
+
+.general-card2{
+  @apply p-[30px] rounded-[15px] h-[200px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
+}
+
+/* For the stardom page alone */
+
+.stardomcta{
+@apply bg-[url('/src/assets/stardombg.JPG')] bg-cover bg-center;
+}
+

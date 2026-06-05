@@ -1,0 +1,332 @@
+import { useState, useEffect } from "react";
+import back from "./assets/back.png";
+import menu from "./assets/menu.png";
+import logo from "./assets/logo.png";
+import fb from "./assets/icons8-fb.svg";
+import ig from "./assets/icons8-ig.svg";
+import x from "./assets/icons8-x-50.png";
+import youtube from "./assets/icons8-youtube.png";
+import tiktok from "./assets/icons8-tiktok-50.png";
+import { Link } from "react-router-dom";
+
+export const list = [
+  { name: "home", path: "/" },
+  { name: "About us", path: "/aboutUs" },
+  { name: "Awards", path: "/awards" },
+  { name: "Rise to fame", path: "/stardom" },
+  { name: "Nominate", path: "/nominate" },
+  { name: "Sponsors", path: "/sponsors" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Contact-us", path: "/contact" },
+];
+
+function App() {
+  const brand = [
+    { id: 1, image: logo },
+    { id: 2, text: "Celebrating Excellence, Inspiring change" },
+  ];
+
+  const [slide, setSlide] = useState(false);
+
+  const toggleSlide = () => {
+    setSlide(!slide);
+  };
+
+  return (
+    <>
+      <div className="flex">
+        {/* Nav menu */}
+        <aside className={`heading ${slide ? "slide-in" : "slide-out"}`}>
+          <ul className="list">
+            <button className="menu " onClick={toggleSlide}>
+              <img src={back} alt="Back" />
+            </button>
+            {list.map((item, index) => (
+              <li key={index}>
+                <Link to={item.path} className="header-button">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        {/* Hero section */}
+
+        <section className="heroSection">
+          <div className="inline-flex h-[50px] justify-between w-full md:h-[20px]">
+            <button
+              className="rounded-[10px] h-[5px] md:cursor-pointer border-white border-2 p-2 rounded-[10px] h-[45px]"
+              onClick={toggleSlide}
+            >
+              <img src={menu} alt="Menu" />
+            </button>
+
+            <img src={logo} alt="Logo" className="h-[35px] md:h-[55px]" />
+          </div>
+          <div className="text-white  text-center bolder md:h-[400px] md:grid">
+            <h1 className="text-2xl md:text-3xl">
+              Merits And value awards
+              <br />
+              <span className="light text-md ">
+                Celebrating Excellence, Inspiring change
+              </span>
+            </h1>
+
+            <span className="light md:text-[20px]  ">
+              Recognising outstanding talent,
+              <br />
+              creativitiy and inclusion in Maiduguri
+              <br />
+              and beyond.
+            </span>
+            <div className="h-[170px]">
+              <button className="button-theme bolder  ">
+                Nominate someone
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Intro section */}
+      <section className="mt-[50px] mb-[50px] text-center w-full">
+        <h1 className="bolder2  text-3xl">Who we are </h1>
+        <div className="flex w-full h-full justify-center text-[20px] p-[30px] md:text-2xl">
+          <p className=" light2 ">
+            Merits and Value awards is a prestigious platform committed to
+            spreading, healing and promoting resilience and celebrating
+            excellence, creativity, culture and innovation.
+            <br />
+            Through our annual ceremony and flagship programs, we recognize
+            individuals and organisations making meaningful impact in
+            entertainment, the arts, entrepreneurship and their communities.
+            <br />
+            We believe talent knows no boundaries and that greatness is defined
+            by passion, creativity and determination.
+          </p>
+        </div>
+      </section>
+
+      {/*CTA section*/}
+
+      <section className="cta">
+        <div className="w-full h-full backdrop-blur-[3px] flex justify-center items-center">
+          <button className=" bg-white rounded-[10px] w-[170px] text-black p-3 hover:cursor-pointer hover:border-2 border-black transition-all duration-100">
+            <span className="hover:text-shadow-sm text-shadow-white transition-all duration-200">
+              Discover our story
+            </span>
+          </button>
+        </div>
+      </section>
+
+      {/* Highlights */}
+
+      <section className="p-[40px] bg-[#F9FAFB]">
+        <h1 className="bolder text-3xl text-center mb-[40px]">
+          HIGHLIGHTS AND QUICK STATS
+        </h1>
+        <div className="card-divs">
+          <div className="card bg-[#FEF3C7]">
+            <div className="card-img bg-[#D4A373]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#FFD700"
+                className="size-70"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 0 0-.584.859 6.753 6.753 0 0 0 6.138 5.6 6.73 6.73 0 0 0 2.743 1.346A6.707 6.707 0 0 1 9.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 0 0-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 0 1-1.112-3.173 6.73 6.73 0 0 0 2.743-1.347 6.753 6.753 0 0 0 6.139-5.6.75.75 0 0 0-.585-.858 47.077 47.077 0 0 0-3.07-.543V2.62a.75.75 0 0 0-.658-.744 49.22 49.22 0 0 0-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 0 0-.657.744Zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 0 1 3.16 5.337a45.6 45.6 0 0 1 2.006-.343v.256Zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 0 1-2.863 3.207 6.72 6.72 0 0 0 .857-3.294Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className="bolder mt-4 w-full text-center text-[20px]">
+              Award categories
+            </div>
+          </div>
+          {/* HEROICONS OR LUCIDE FOR THE ICONS */}
+          <div className="card bg-slate-100">
+            <div className="card-img bg-[#DBEAFE]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#2563EB"
+                className="size-70"
+              >
+                <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z" />
+                <path d="M6 10.5a.75.75 0 0 1 .75.75v1.5a5.25 5.25 0 1 0 10.5 0v-1.5a.75.75 0 0 1 1.5 0v1.5a6.751 6.751 0 0 1-6 6.709v2.291h3a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5h3v-2.291a6.751 6.751 0 0 1-6-6.709v-1.5A.75.75 0 0 1 6 10.5Z" />
+              </svg>
+            </div>
+            <div className="bolder mt-4 w-full text-center text-[20px]">
+              Talented nominees
+            </div>
+          </div>
+
+          <div className="card bg-purple-50">
+            <div className="card-img bg-[#F3E8FF]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={0.5}
+                stroke="#9333EA"
+                className="size-70"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m20.893 13.393-1.135-1.135a2.252 2.252 0 0 1-.421-.585l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 0 1-1.383-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.411-2.353a2.25 2.25 0 0 0 .286-.76m11.928 9.869A9 9 0 0 0 8.965 3.525m11.928 9.868A9 9 0 1 1 8.965 3.525"
+                />
+              </svg>
+            </div>
+            <div className="bolder mt-4 w-full text-center text-[20px]">
+              Maiduguri
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="p-[40px]  bg-[#F5F5F5]">
+        <h1 className="bolder2 text-center text-2xl mt-3">
+          Our Flagship Events
+        </h1>
+
+        <div className="mt-[40px] grid grid-cols-1 justify-center items-center gap-10 md:grid-cols-2">
+          <div className="general-card bg-[#F7E7CE]">
+            <h1 className="bolder2 text-xl text-center mt-2 md:text-2xl">
+              Annual award ceremony
+            </h1>
+            <p className="text-[#334155] lighter2 text-center text-[14px] mt-[5px] md:text-xl mt-[40px]">
+              <b> Merit and Value Awards Ceremony 2026 Theme:</b> <br />
+              Celebrating Excellence and Inclusion A glamorous night celebrating
+              the best in music, film, fashion, entrepreneurship, humanitarian
+              work, and digital content creation in Maiduguri.
+            </p>
+            <div className="flex justify-center mt-5">
+              <button className="p-2 bolder2 bg-[#DFD7C7] rounded-[10px] text-[#334155] cursor-pointer">
+                View Awards
+              </button>
+            </div>
+          </div>
+
+          <div className="general-card bg-[#E6E6FA] ">
+            <h1 className="bolder2 text-xl text-center mt-1 md:text-2xl">
+              Rise to fame talent hunt 2027
+            </h1>
+            <p className=" text-[#334155] lighter2 text-center text-[14px] mt-[5px] md:text-xl mt-[40px]">
+              <b> Rise to Fame” Talent Hunt 2027 Theme:</b> <br />
+              Gateway to Merit and Value Awards A groundbreaking talent hunt
+              designed to discover, nurture, and celebrate exceptional talents —
+              with a powerful commitment to inclusion for persons living with
+              disabilities.
+            </p>
+            <div className="flex justify-center mt-5">
+              <button className="p-2 bolder2 bg-[#C3CBE0] rounded-[10px] text-[#334155] cursor-pointer">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* About inclusion */}
+      <section className="bg-black text-white text-center p-5">
+        <h1 className="bolder text-3xl mt-4">About inclusion</h1>
+        <br />
+        <h2 className="light text-xl mb-4">
+          We Don’t Just Celebrate Talent. We Break Barriers.
+        </h2>
+        <p className="light text-center p-5">
+          Merit and Value Awards is built on a foundation of equality. We create
+          platforms where every voice is heard, every talent is seen, and every
+          individual — regardless of ability —has an equal chance to shine.
+        </p>
+      </section>
+
+      {/* Testimonials */}
+
+      <section className="light2 p-[70px] text-center">
+        <h1 className="bolder2 text-3xl mt-4">Testimonials</h1>
+        <p className="text-xl">
+          “Merit and Value Awards gave me the platform I needed. Tonight, my
+          music reached thousands.” — Past Winner, Music Category
+          <br />
+          “As a person with a disability, I never thought I’d stand on a stage
+          like this. Merit and Value Awards made it possible.” — Talent Hunt
+          Participant
+        </p>
+      </section>
+
+      {/* Sponsors */}
+      <section className="h-[390px] bg-black text-white flex justify-center md:flex flex-col">
+        <h1 className="bolder text-3xl mt-4 text-center">Our partners </h1>
+
+        <div className="border-2 h-[170px] "></div>
+        <button className=" button-theme text-center block mx-auto">
+          Become a sponsor
+        </button>
+      </section>
+
+      {/* Newsletter/updates */}
+      <section className=" p-[30px] mt-[40px] bg-[#F9FAFB]">
+        <h1 className="bolder text-2xl text-center mb-4">Stay in the loop</h1>
+        <div className="w-[300px] light p-[40px] h-[350px] shadow-lg mx-auto shadow-[4px_5px_10px_20px_40px_#FFFF] rounded-[13px] md:w-[80%]">
+          <form action="" className="flex flex-col gap-2">
+            <label htmlFor="Name">Name</label>
+
+            <input
+              type="text"
+              className="border-1 border-[#BCC6CC] w-[96%] rounded-[10px] p-1"
+            />
+
+            <label htmlFor="email">Email</label>
+
+            <input
+              type="text"
+              className="border-1 border-[#BCC6CC] w-[96%] rounded-[10px] p-1"
+            />
+            <button className="p-2 mt-3 w-[60%] bolder2 bg-[#00B8FF] rounded-[10px] text-[#334155] block mx-auto cursor-pointer md:bg-[#87CEEB] hover:bg-[#00BFFF] transition-all duration-200">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+      {/* Footer */}
+      <footer className="bg-black text-white text-center p-5">
+        <div className="p-[40px]  grid gap-[30px] justify-center items-center md:flex">
+          <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
+            <img src={logo} alt="Logo" className="h-[30px]" />
+            <span>Celebratng excellence and inspiring change</span>
+          </div>
+
+          <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
+            <ul className="grid gap-[10px]">
+              {list.map((item, index) => (
+                <li key={index}>
+                  <Link to={item.path} className="header-button">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="inline-flex gap-[30px]">
+              <img src={ig} alt="Instagram" className="h-[30px] md:h-[30px]" />
+              <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
+              <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
+              <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[30px]" />
+              <img
+                src={youtube}
+                alt="youtube"
+                className="h-[30px] md:h-[30px]"
+              />
+            </div>
+          </div>
+        </div>
+        <span>&copy; 2026 Merit and value awards</span>
+      </footer>
+    </>
+  );
+}
+
+export default App;
