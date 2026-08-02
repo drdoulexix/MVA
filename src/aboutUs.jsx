@@ -254,8 +254,8 @@ const AboutUs = () => {
               <p className="mt-3 text-sm leading-7 text-gray-700">
                 Bachelor of Science (B.Sc.) Microbiology, University of
                 Maiduguri. Humanitarian, media consultant, content creator,
-                entrepreneur, influencer, and event planner. Jane leads the
-                overall strategic direction, programming, fundraising, and
+                entrepreneur, influencer, and event planner with over 10 years of experience. 
+                Jane leads the overall strategic direction, programming, fundraising, and
                 partnerships of Merit and Value Awards, ensuring the platform
                 remains a credible, inclusive, and community-driven force for
                 recognising excellence in Maiduguri and beyond.
@@ -354,11 +354,11 @@ const AboutUs = () => {
                 Digital and Structural Programmer, Khemsafe Institute of
                 Information Technology. Cybersecurity, TS Academy. AI and
                 Automation, TS Academy. Doctor of Veterinary Medicine (DVM),
-                University of Maiduguri. Francis oversees the digital
-                infrastructure, data integrity, and cybersecurity operations of
-                Merit and Value Awards, ensuring the platform operates
-                securely, transparently, and with the highest standards of
-                digital trust.
+                University of Maiduguri. With his 13 years of extensive experience, 
+                Francis oversees the digital infrastructure, data integrity, 
+                and cybersecurity operations of Merit and Value Awards, ensuring the 
+                platform operatessecurely, transparently, and with the highest 
+                standards of digital trust.
               </p>
             </div>
           </article>
