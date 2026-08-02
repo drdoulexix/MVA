@@ -6,7 +6,7 @@ import youtube from "./assets/icons8-youtube.png";
 import tiktok from "./assets/icons8-tiktok2.png";
 import "./index.css";
 import back from "./assets/back.png";
-import menu from "./assets/menu.png";
+import menu from "./assets/menu2.jpeg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { list } from "./App.jsx";
@@ -14,6 +14,7 @@ import email from "./assets/icons8-email.png";
 import location from "./assets/icons8-location.png";
 import telephone from "./assets/icons8-telephone.png";
 import time from "./assets/icons8-time.png";
+import whatsapp from "./assets/whatsapp.png";
 
 const ContactUs = () => {
   const [slide, setSlide] = useState(false);
@@ -26,7 +27,9 @@ const ContactUs = () => {
     <>
       <div className="flex">
         {/* Aside section */}
-        <aside className={`heading ${slide ? "slide-in" : "slide-out"}`}>
+        <aside
+          className={`heading fixed md:static ${slide ? "slide-in" : "slide-out"}`}
+        >
           <ul className="list">
             <button className="menu " onClick={toggleSlide}>
               <img src={back} alt="Back" />
@@ -42,16 +45,18 @@ const ContactUs = () => {
         </aside>
 
         <section className="w-full bg-black text-white p-3 h-[170px] md:text-3xl">
-          <div className="inline-flex h-[50px] justify-between w-full md:h-[20px]">
-            <button
-              className="rounded-[10px] h-[5px] md:cursor-pointer border-white border-2 p-2 rounded-[10px] h-[45px]"
-              onClick={toggleSlide}
-            >
-              <img src={menu} alt="Menu" />
-            </button>
+          <button
+            className="fixed top-0 left-0 bg-[#999999] rounded-[50%] z-[20] md:cursor-pointer fixed h-[45px] w-[50px] "
+            onClick={toggleSlide}
+          >
+            <img src={menu} alt="Menu" className="ml-3" />
+          </button>
 
-            <img src={logo} alt="Logo" className="h-[35px] md:h-[55px]" />
-          </div>
+          <img
+            src={logo}
+            alt="Logo"
+            className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]"
+          />
           <header className="text-center">
             <h1 className=" bolder text-2xl md:text-3xl">Contact us</h1>
 
@@ -64,34 +69,48 @@ const ContactUs = () => {
           Contact information
         </h1>
         <div className="card-divs">
-          <div className="general-card2 bg-yellow-200">
-            <div className="card-img">
-              <img src={location} alt="card" />
-            </div>
-            <span className="bolder text-[#332155]">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=11.8333,13.1500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="general-card2 flex items-center justify-center bg-yellow-200">
+              <div className="card-img">
+                <img src={location} alt="card" />
+              </div>
+              {/* <span className="bolder text-[#332155]">
               Maiduguri, Borno State, Nigeria
-            </span>
-          </div>
-
-          <div className="general-card2 bg-blue-200">
-            <div className="card-img">
-              <img src={email} alt="card" />
+            </span> */}
             </div>
-            <span className="bolder text-[#332155]">
-              ***********************
-            </span>
-          </div>
+          </a>
 
-          <div className="general-card2 bg-green-200">
-            <div className="card-img">
-              <img src={telephone} alt="card" />
+          <a href="mailto:meritandvalueawardsng@gmail.com">
+            <div className="general-card2 flex items-center justify-center  bg-blue-200">
+              <div className="card-img">
+                <img src={email} alt="card" />
+              </div>
+              {/* <span className="bolder text-[#332155]">
+                meritandvalue <br /> awardsng@gmail.com
+              </span> */}
             </div>
-            <span className="bolder text-[#332155]">
-              ************************
-            </span>
-          </div>
+          </a>
 
-          <div className="general-card2 bg-gray-200">
+          <a
+            href="https://wa.me/+2349071358268"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="general-card2 flex items-center justify-center bg-green-200">
+              <div className="card-img">
+                <img src={whatsapp} alt="card" />
+              </div>
+              {/* <span className="bolder text-[#332155]">
+                +234 907 135 8268
+              </span> */}
+            </div>
+          </a>
+
+          <div className="general-card2 bg-gray-400">
             <div className="card-img">
               <img src={time} alt="card" />
             </div>
@@ -107,30 +126,38 @@ const ContactUs = () => {
           Social media links
         </h1>
 
-        <div className="inline-flex justify-center">
-          <Link>
-            <img src={ig} alt="Instagram" />
-          </Link>
-
-          <Link>
-            <img src={fb} alt="Facebook" />
-          </Link>
-
-          <Link>
-            <img src={tiktok} alt="Tiktok" className="h-[50px]" />
-          </Link>
-
-          <Link>
-            <img src={youtube} alt="Youtube" className="h-[50px]" />
-          </Link>
-
-          <Link>
-            <img src={x} alt="Twitter " className="h-[50px]" />
-          </Link>
+        <div className="inline-flex gap-[30px]">
+          <a
+            href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA=="
+            target="_blank"
+          >
+            <img src={ig} alt="Instagram" className="h-[30px] md:h-[50px]" />
+          </a>
+          <a
+            href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr"
+            target="_blank"
+          >
+            <img src={fb} alt="Facebook" className="h-[30px] md:h-[50px]" />
+          </a>
+          <a href="https://x.com/mvaevent" target="_blank">
+            <img src={x} alt="X" className="h-[30px] md:h-[50px]" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs"
+            target="_blank"
+          >
+            <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[50px]" />
+          </a>
+          <a
+            href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3"
+            target="_blank"
+          >
+            <img src={youtube} alt="youtube" className="h-[30px] md:h-[50px]" />
+          </a>
         </div>
       </section>
 
-      <section className="p-4 text-center">
+      {/* <section className="p-4 text-center">
         <h1 className="text-slate-500 bolder2 text-2xl mb-[40px] md:text-4xl">
           Sponsorship & Donation Payments
         </h1>
@@ -139,21 +166,23 @@ const ContactUs = () => {
           below:
         </span>
 
-        <ul className="grid list-disc list-inside mb-4">
-          <li>
-            <b>Account Name:</b> Jane Francis
-          </li>
-          <li>
-            <b>Account number:</b>0084391253
-          </li>
-          <li>
-            <b>Bank:</b>Access bank
-          </li>
-        </ul>
+        <div className=" w-[30%] mx-auto flex justify-center">
+          <ul className="flex flex-col mb-4">
+            <li className="flex justify-start">
+              <b className="mr-1" >Account Name:</b> Jane Francis
+            </li>
+            <li>
+              <b>Account number:</b> 0084391253
+            </li>
+            <li className="flex justify-start">
+              <b className="mr-1">Bank:</b> Access bank
+            </li>
+          </ul>
+        </div>
         <i>
-          Please send proof of payment to our email after making a transfer.
+          Please send proof of payment to our whatsapp link above after making a transfer.
         </i>
-      </section>
+      </section> */}
       {/* Footer */}
       <footer className="bg-black text-white text-center p-5">
         <div className="p-[40px]  grid gap-[30px] justify-center items-center md:flex">
@@ -173,15 +202,48 @@ const ContactUs = () => {
               ))}
             </ul>
             <div className="inline-flex gap-[30px]">
-              <img src={ig} alt="Instagram" className="h-[30px] md:h-[30px]" />
-              <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
-              <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
-              <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[30px]" />
-              <img
-                src={youtube}
-                alt="youtube"
-                className="h-[30px] md:h-[30px]"
-              />
+              <a
+                href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA=="
+                target="_blank"
+              >
+                <img
+                  src={ig}
+                  alt="Instagram"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr"
+                target="_blank"
+              >
+                <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a href="https://x.com/mvaevent" target="_blank">
+                <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs"
+                target="_blank"
+              >
+                <img
+                  src={tiktok}
+                  alt="tiktok"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3"
+                target="_blank"
+              >
+                <img
+                  src={youtube}
+                  alt="youtube"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+            </div>
+            <div>
+              <Link to="/privacyPolicy">Privacy Policy</Link>
             </div>
           </div>
         </div>

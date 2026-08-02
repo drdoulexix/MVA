@@ -40,6 +40,10 @@
 /* for the nav bar */
 .heading {
   @apply font-[Josefin-sans-bold] fixed top-0 left-0 p-3 z-30 bg-black bg-blend-overlay h-screen w-[150px] md:h-screen p-4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
 }
 
 .slide-in {
@@ -95,7 +99,7 @@
 }
 
 .general-card2{
-  @apply p-[30px] rounded-[15px] h-[200px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
+  @apply p-[20px] rounded-[15px] h-[200px] w-[200px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
 }
 
 /* For the stardom page alone */

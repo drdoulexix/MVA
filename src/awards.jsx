@@ -3,7 +3,7 @@ import { useState } from "react";
 import { list } from "./App.jsx";
 import "./index.css";
 import back from "./assets/back.png";
-import menu from "./assets/menu.png";
+import menu from "./assets/menu2.jpeg";
 import { Link } from "react-router-dom";
 import music from "./assets/icons8-music.png";
 import movie from "./assets/icons8-movie.png";
@@ -33,7 +33,9 @@ const Awards = () => {
     <>
       <div className="flex">
         {/* Aside section */}
-        <aside className={`heading ${slide ? "slide-in" : "slide-out"}`}>
+        <aside
+          className={`heading fixed md:static ${slide ? "slide-in" : "slide-out"}`}
+        >
           <ul className="list">
             <button className="menu " onClick={toggleSlide}>
               <img src={back} alt="Back" />
@@ -49,18 +51,21 @@ const Awards = () => {
         </aside>
 
         <section className="w-full bg-black text-white p-3 h-[170px] md:text-3xl">
-          <div className="inline-flex h-[50px] justify-between w-full md:h-[20px]">
-            <button
-              className="rounded-[10px] h-[5px] md:cursor-pointer border-white border-2 p-2 rounded-[10px] h-[45px]"
-              onClick={toggleSlide}
-            >
-              <img src={menu} alt="Menu" />
-            </button>
+          <button
+            className="fixed top-0 left-0 bg-[#999999] rounded-[50%] z-[20] md:cursor-pointer fixed h-[45px] w-[50px] "
+            onClick={toggleSlide}
+          >
+            <img src={menu} alt="Menu" className="ml-3" />
+          </button>
 
-            <img src={logo} alt="Logo" className="h-[35px] md:h-[55px]" />
-          </div>
-          <header className="text-center">
-            <h1 className=" bolder text-2xl">Award categories</h1>
+
+          <img
+            src={logo}
+            alt="Logo"
+            className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]"
+          />
+          <header className="text-center mt-4">
+            <h1 className=" bolder text-3xl sm:text-4xl">Award categories</h1>
 
             <span className="light">
               Recognizing Excellence Across Industries
@@ -82,41 +87,45 @@ const Awards = () => {
 
       {/* Categories */}
       <section className="text-center mt-[40px] bg-slate-100 p-4 md:p-[40px]">
-        <h1 className="mt-4 mb-4 bolder2 text-3xl text-slate-500">Award Categories</h1>
+        <h1 className="mt-4 mb-4 bolder2 text-3xl text-slate-500">
+          Award Categories
+        </h1>
         <div className="grid gap-5 md:flex justify-around items-center ">
           <div className="w-[200px] h-[150px] bg-yellow-300 rounded-[30px] p-3 ">
             <div className="card-img">
               <img src={music} alt="Icon" />
             </div>
-            <span className="bolder2">Best music artist</span>
+            <span className="bolder2 text-slate-800">Best music artist</span>
           </div>
 
           <div className="w-[200px] h-[150px] p-2 bg-blue-300 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF]">
             <div className="card-img">
               <img src={movie} alt="Icon" />
             </div>
-            <span className="bolder2">Best in filming</span>
+            <span className="bolder2 text-slate-800">Best in filming</span>
           </div>
 
           <div className="w-[200px] h-[150px] p-2 bg-red-300 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF]">
             <div className="card-img">
               <img src={dress} alt="Icon" />
             </div>
-            <span className="bolder2">Best in fashion</span>
+            <span className="bolder2 text-slate-800">Best in fashion</span>
           </div>
 
-          <div className="w-[200px] h-[150px] p-2 bg-orange-300 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF]">
+          <div className="w-[200px] h-[150px] p-2 bg-orange-300 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF] flex flex-col justify-center items-center">
             <div className="card-img">
               <img src={card2} alt="Icon" />
             </div>
-            <span className="bolder2">Best entrepreneur</span>
+            <span className="bolder2 text-slate-800 text-center leading-tight px-1">
+              Best entrepreneur
+            </span>
           </div>
 
-          <div className="w-[200px] h-[150px] p-2 bg-purple-400 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF]">
+          <div className="w-[200px] h-[150px] p-2 bg-purple-400 rounded-[30px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF] flex flex-col justify-center items-center">
             <div className="card-img">
               <img src={phone} alt="Icon" />
             </div>
-            <span className="bolder2 text-[15px] text-[#33]">
+            <span className="bolder2 text-[15px] text-slate-100 text-center leading-tight px-1">
               Best content creator
             </span>
           </div>
@@ -125,14 +134,14 @@ const Awards = () => {
             <div className="card-img">
               <img src={charity} alt="Icon" />
             </div>
-            <span className="bolder2">Best Humanitarian</span>
+            <span className="bolder2 text-slate-800">Best Humanitarian</span>
           </div>
 
           <div className="w-[200px] h-[150px] p-2 bg-orange-400 rounded-[20px] shadow-lg shadow-[0px_5px_70px_70px_70px_#FFFF]">
             <div className="card-img">
               <img src={dance} alt="Icon" />
             </div>
-            <span className="bolder2">Best Performance</span>
+            <span className="bolder2 text-slate-800">Best Performance</span>
           </div>
         </div>
       </section>
@@ -152,7 +161,9 @@ const Awards = () => {
           </div>
 
           <div className=" mt-[40px] flex justify-center items-center bg-[url('/src/assets/cta2.jpg')] no-repeat bg-cover bg-center mt-[30px] h-[300px] ">
-            <Link className="button-theme bolder">Nominate someone</Link>
+            <Link to="/nominate" className="button-theme bolder">
+              Nominate someone
+            </Link>
           </div>
         </div>
       </section>
@@ -160,22 +171,56 @@ const Awards = () => {
       {/* Past winners*/}
 
       <section className="p-4 text-center mt-4">
-        <h1 className="bolder2 mt-[30px] text-3xl mb-[30px]">Past winners</h1>
-
+        <header className="max-w-5xl mx-auto">
+          <h1 className="bolder2 text-2xl md:text-3xl text-center mt-[30px]">
+            Past Winners
+          </h1>
+          <p className="light2 text-lg md:text-xl text-center mt-4 leading-8 text-gray-700">
+            Every name on this page represents a story of dedication,
+            creativity, and impact. These are but a few of the individuals and
+            organisations that our community recognised, celebrated, and crowned
+            the standard-bearers of excellence in Maiduguri.
+          </p>
+        </header>
         <div className=" mt-[40px] grid gap-5 md:flex justify-evenly">
-          <img src={award1} alt="Award" className="h-[250px]" />
-          <img src={award2} alt="Award" className="h-[250px]" />
-          <img src={award3} alt="Award" className="h-[250px]" />
+          <div className="bolder">
+            <img src={award1} alt="Award" className="h-[250px]" />
+            <br />
+            <span>
+              Sleek the empire spa
+              <br />
+              Special recognition category award 2025
+            </span>
+          </div>
+          <div className="bolder">
+            <img src={award2} alt="Award" className="h-[250px]" />
+            <br />
+            <span>
+              Ibrahim Harun (Arab Maiduguri)
+              <br />
+              Content Creator of the year award 2025
+            </span>
+          </div>
+          <div className="bolder">
+            <img src={award3} alt="Award" className="h-[250px]" />
+            <br />
+            <span>
+              Mohammed Abubakar
+              <br />
+              Male influencer of the year award 2025
+            </span>
+          </div>
         </div>
       </section>
+      {/* Footer */}
       <footer className="bg-black text-white text-center p-5">
         <div className="p-[40px]  grid gap-[30px] justify-center items-center md:flex">
-          <div className="w-full flex flex-col gap-[30px] text-center items-center">
+          <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
             <img src={logo} alt="Logo" className="h-[30px]" />
             <span>Celebratng excellence and inspiring change</span>
           </div>
 
-          <div className="w-full flex flex-col gap-[30px] text-center items-center">
+          <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
             <ul className="grid gap-[10px]">
               {list.map((item, index) => (
                 <li key={index}>
@@ -186,15 +231,48 @@ const Awards = () => {
               ))}
             </ul>
             <div className="inline-flex gap-[30px]">
-              <img src={ig} alt="Instagram" className="h-[30px] md:h-[30px]" />
-              <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
-              <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
-              <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[30px]" />
-              <img
-                src={youtube}
-                alt="youtube"
-                className="h-[30px] md:h-[30px]"
-              />
+              <a
+                href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA=="
+                target="_blank"
+              >
+                <img
+                  src={ig}
+                  alt="Instagram"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr"
+                target="_blank"
+              >
+                <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a href="https://x.com/mvaevent" target="_blank">
+                <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs"
+                target="_blank"
+              >
+                <img
+                  src={tiktok}
+                  alt="tiktok"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3"
+                target="_blank"
+              >
+                <img
+                  src={youtube}
+                  alt="youtube"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+            </div>
+            <div>
+              <Link to="/privacyPolicy">Privacy Policy</Link>
             </div>
           </div>
         </div>

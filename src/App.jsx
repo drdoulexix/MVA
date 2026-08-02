@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import back from "./assets/back.png";
-import menu from "./assets/menu.png";
+import menu from "./assets/menu2.jpeg";
 import logo from "./assets/logo.png";
 import fb from "./assets/icons8-fb.svg";
 import ig from "./assets/icons8-ig.svg";
@@ -8,12 +8,13 @@ import x from "./assets/icons8-x-50.png";
 import youtube from "./assets/icons8-youtube.png";
 import tiktok from "./assets/icons8-tiktok-50.png";
 import { Link } from "react-router-dom";
+import mvs from "./assets/clearMVS.png";
 
 export const list = [
-  { name: "home", path: "/" },
+  { name: "Home", path: "/" },
   { name: "About us", path: "/aboutUs" },
   { name: "Awards", path: "/awards" },
-  { name: "Rise to fame", path: "/stardom" },
+  { name: "Rise to fame", path: "/riseToFame" },
   { name: "Nominate", path: "/nominate" },
   { name: "Sponsors", path: "/sponsors" },
   { name: "Gallery", path: "/gallery" },
@@ -36,7 +37,9 @@ function App() {
     <>
       <div className="flex">
         {/* Nav menu */}
-        <aside className={`heading ${slide ? "slide-in" : "slide-out"}`}>
+        <aside
+          className={`heading fixed md:static ${slide ? "slide-in" : "slide-out"}`}
+        >
           <ul className="list">
             <button className="menu " onClick={toggleSlide}>
               <img src={back} alt="Back" />
@@ -53,18 +56,21 @@ function App() {
 
         {/* Hero section */}
 
-        <section className="heroSection">
-          <div className="inline-flex h-[50px] justify-between w-full md:h-[20px]">
-            <button
-              className="rounded-[10px] h-[5px] md:cursor-pointer border-white border-2 p-2 rounded-[10px] h-[45px]"
-              onClick={toggleSlide}
-            >
-              <img src={menu} alt="Menu" />
-            </button>
+        <section className="heroSection relative">
+          <button
+            className="fixed top-0 left-0 bg-[#999999] rounded-[50%] z-[20] md:cursor-pointer fixed h-[45px] w-[50px] "
+            onClick={toggleSlide}
+          >
+            <img src={menu} alt="Menu" className="ml-3" />
+          </button>
 
-            <img src={logo} alt="Logo" className="h-[35px] md:h-[55px]" />
-          </div>
-          <div className="text-white  text-center bolder md:h-[400px] md:grid">
+
+          <img
+            src={logo}
+            alt="Logo"
+            className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]"
+          />
+          <div className="text-white text-center bolder md:h-[400px] md:grid">
             <h1 className="text-2xl md:text-3xl">
               Merits And value awards
               <br />
@@ -80,10 +86,10 @@ function App() {
               <br />
               and beyond.
             </span>
-            <div className="h-[170px]">
-              <button className="button-theme bolder  ">
+            <div className="h-[170px] mt-[60px]">
+              <Link to="/nominate" className="button-theme bolder  ">
                 Nominate someone
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -113,9 +119,12 @@ function App() {
       <section className="cta">
         <div className="w-full h-full backdrop-blur-[3px] flex justify-center items-center">
           <button className=" bg-white rounded-[10px] w-[170px] text-black p-3 hover:cursor-pointer hover:border-2 border-black transition-all duration-100">
-            <span className="hover:text-shadow-sm text-shadow-white transition-all duration-200">
+            <Link
+              to="/aboutUs"
+              className="hover:text-shadow-sm text-shadow-white transition-all duration-200"
+            >
               Discover our story
-            </span>
+            </Link>
           </button>
         </div>
       </section>
@@ -127,64 +136,75 @@ function App() {
           HIGHLIGHTS AND QUICK STATS
         </h1>
         <div className="card-divs">
-          <div className="card bg-[#FEF3C7]">
-            <div className="card-img bg-[#D4A373]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="#FFD700"
-                className="size-70"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 0 0-.584.859 6.753 6.753 0 0 0 6.138 5.6 6.73 6.73 0 0 0 2.743 1.346A6.707 6.707 0 0 1 9.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 0 0-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 0 1-1.112-3.173 6.73 6.73 0 0 0 2.743-1.347 6.753 6.753 0 0 0 6.139-5.6.75.75 0 0 0-.585-.858 47.077 47.077 0 0 0-3.07-.543V2.62a.75.75 0 0 0-.658-.744 49.22 49.22 0 0 0-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 0 0-.657.744Zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 0 1 3.16 5.337a45.6 45.6 0 0 1 2.006-.343v.256Zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 0 1-2.863 3.207 6.72 6.72 0 0 0 .857-3.294Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          <Link to="/awards">
+            <div className="card bg-[#FEF3C7]">
+              <div className="card-img bg-[#D4A373]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#FFD700"
+                  className="size-70"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 0 0-.584.859 6.753 6.753 0 0 0 6.138 5.6 6.73 6.73 0 0 0 2.743 1.346A6.707 6.707 0 0 1 9.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 0 0-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 0 1-1.112-3.173 6.73 6.73 0 0 0 2.743-1.347 6.753 6.753 0 0 0 6.139-5.6.75.75 0 0 0-.585-.858 47.077 47.077 0 0 0-3.07-.543V2.62a.75.75 0 0 0-.658-.744 49.22 49.22 0 0 0-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 0 0-.657.744Zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 0 1 3.16 5.337a45.6 45.6 0 0 1 2.006-.343v.256Zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 0 1-2.863 3.207 6.72 6.72 0 0 0 .857-3.294Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="bolder mt-4 w-full text-center text-[20px]">
+                Award categories
+              </div>
             </div>
-            <div className="bolder mt-4 w-full text-center text-[20px]">
-              Award categories
-            </div>
-          </div>
+          </Link>
           {/* HEROICONS OR LUCIDE FOR THE ICONS */}
-          <div className="card bg-slate-100">
-            <div className="card-img bg-[#DBEAFE]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="#2563EB"
-                className="size-70"
-              >
-                <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z" />
-                <path d="M6 10.5a.75.75 0 0 1 .75.75v1.5a5.25 5.25 0 1 0 10.5 0v-1.5a.75.75 0 0 1 1.5 0v1.5a6.751 6.751 0 0 1-6 6.709v2.291h3a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5h3v-2.291a6.751 6.751 0 0 1-6-6.709v-1.5A.75.75 0 0 1 6 10.5Z" />
-              </svg>
+          <Link to="/nominate">
+            <div className="card bg-slate-100">
+              <div className="card-img bg-[#DBEAFE]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#2563EB"
+                  className="size-70"
+                >
+                  <path d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z" />
+                  <path d="M6 10.5a.75.75 0 0 1 .75.75v1.5a5.25 5.25 0 1 0 10.5 0v-1.5a.75.75 0 0 1 1.5 0v1.5a6.751 6.751 0 0 1-6 6.709v2.291h3a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5h3v-2.291a6.751 6.751 0 0 1-6-6.709v-1.5A.75.75 0 0 1 6 10.5Z" />
+                </svg>
+              </div>
+              <div className="bolder mt-4 w-full text-center text-[20px]">
+                Talented nominees
+              </div>
             </div>
-            <div className="bolder mt-4 w-full text-center text-[20px]">
-              Talented nominees
-            </div>
-          </div>
+          </Link>
 
-          <div className="card bg-purple-50">
-            <div className="card-img bg-[#F3E8FF]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={0.5}
-                stroke="#9333EA"
-                className="size-70"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m20.893 13.393-1.135-1.135a2.252 2.252 0 0 1-.421-.585l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 0 1-1.383-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.411-2.353a2.25 2.25 0 0 0 .286-.76m11.928 9.869A9 9 0 0 0 8.965 3.525m11.928 9.868A9 9 0 1 1 8.965 3.525"
-                />
-              </svg>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=11.8333,13.1500"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            <div className="card bg-purple-50">
+              <div className="card-img bg-[#F3E8FF]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={0.5}
+                  stroke="#9333EA"
+                  className="size-70"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m20.893 13.393-1.135-1.135a2.252 2.252 0 0 1-.421-.585l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 0 1-1.383-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.411-2.353a2.25 2.25 0 0 0 .286-.76m11.928 9.869A9 9 0 0 0 8.965 3.525m11.928 9.868A9 9 0 1 1 8.965 3.525"
+                  />
+                </svg>
+              </div>
+              <div className="bolder mt-4 w-full text-center text-[20px]">
+                Maiduguri
+              </div>
             </div>
-            <div className="bolder mt-4 w-full text-center text-[20px]">
-              Maiduguri
-            </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -205,9 +225,12 @@ function App() {
               work, and digital content creation in Maiduguri.
             </p>
             <div className="flex justify-center mt-5">
-              <button className="p-2 bolder2 bg-[#DFD7C7] rounded-[10px] text-[#334155] cursor-pointer">
+              <Link
+                to="/awards"
+                className="p-2 bolder2 bg-[#DFD7C7] rounded-[10px] text-[#334155] cursor-pointer"
+              >
                 View Awards
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -223,9 +246,12 @@ function App() {
               disabilities.
             </p>
             <div className="flex justify-center mt-5">
-              <button className="p-2 bolder2 bg-[#C3CBE0] rounded-[10px] text-[#334155] cursor-pointer">
+              <Link
+                to="/aboutUs"
+                className="p-2 bolder2 bg-[#C3CBE0] rounded-[10px] text-[#334155] cursor-pointer"
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -246,7 +272,7 @@ function App() {
 
       {/* Testimonials */}
 
-      <section className="light2 p-[70px] text-center">
+      {/* <section className="light2 p-[70px] text-center">
         <h1 className="bolder2 text-3xl mt-4">Testimonials</h1>
         <p className="text-xl">
           “Merit and Value Awards gave me the platform I needed. Tonight, my
@@ -256,20 +282,25 @@ function App() {
           like this. Merit and Value Awards made it possible.” — Talent Hunt
           Participant
         </p>
-      </section>
+      </section> */}
 
       {/* Sponsors */}
-      <section className="h-[390px] bg-black text-white flex justify-center md:flex flex-col">
-        <h1 className="bolder text-3xl mt-4 text-center">Our partners </h1>
+      <section className="h-[390px] bg-black/50 text-white flex justify-center md:flex flex-col">
+        <h1 className="bolder text-3xl mt-2 text-center">Our partners </h1>
 
-        <div className="border-2 h-[170px] "></div>
-        <button className=" button-theme text-center block mx-auto">
+        <div className="border-2 p-2 inline-flex justify-center ">
+          <img src={mvs} alt="MVS Logo" className="h-[150px] w-auto" />
+        </div>
+        <Link
+          to="/sponsors"
+          className=" button-theme text-center block mx-auto"
+        >
           Become a sponsor
-        </button>
+        </Link>
       </section>
 
       {/* Newsletter/updates */}
-      <section className=" p-[30px] mt-[40px] bg-[#F9FAFB]">
+      {/* <section className=" p-[30px] mt-[40px] bg-[#F9FAFB]">
         <h1 className="bolder text-2xl text-center mb-4">Stay in the loop</h1>
         <div className="w-[300px] light p-[40px] h-[350px] shadow-lg mx-auto shadow-[4px_5px_10px_20px_40px_#FFFF] rounded-[13px] md:w-[80%]">
           <form action="" className="flex flex-col gap-2">
@@ -291,7 +322,7 @@ function App() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
       {/* Footer */}
       <footer className="bg-black text-white text-center p-5">
         <div className="p-[40px]  grid gap-[30px] justify-center items-center md:flex">
@@ -311,15 +342,48 @@ function App() {
               ))}
             </ul>
             <div className="inline-flex gap-[30px]">
-              <img src={ig} alt="Instagram" className="h-[30px] md:h-[30px]" />
-              <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
-              <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
-              <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[30px]" />
-              <img
-                src={youtube}
-                alt="youtube"
-                className="h-[30px] md:h-[30px]"
-              />
+              <a
+                href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA=="
+                target="_blank"
+              >
+                <img
+                  src={ig}
+                  alt="Instagram"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr"
+                target="_blank"
+              >
+                <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a href="https://x.com/mvaevent" target="_blank">
+                <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs"
+                target="_blank"
+              >
+                <img
+                  src={tiktok}
+                  alt="tiktok"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+              <a
+                href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3"
+                target="_blank"
+              >
+                <img
+                  src={youtube}
+                  alt="youtube"
+                  className="h-[30px] md:h-[30px]"
+                />
+              </a>
+            </div>
+            <div>
+              <Link to="/privacyPolicy">Privacy Policy</Link>
             </div>
           </div>
         </div>
