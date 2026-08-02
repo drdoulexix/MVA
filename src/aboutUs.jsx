@@ -14,7 +14,7 @@ import ig from "./assets/icons8-ig.svg";
 import x from "./assets/icons8-x-50.png";
 import youtube from "./assets/icons8-youtube.png";
 import tiktok from "./assets/icons8-tiktok-50.png";
-import medialead from "./assets/medialead.jpeg";
+import mediaLead from "./assets/medialead.jpeg";
 import contentCreator from "./assets/contentCreator.jpeg";
 import Adanna from "./assets/Adanna.jpeg";
 import Emmanuel from "./assets/Emmanuel.jpeg";
