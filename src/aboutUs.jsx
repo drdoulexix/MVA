@@ -5,6 +5,7 @@ import "./index.css";
 import back from "./assets/back.png";
 import menu from "./assets/menu2.jpeg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import card1 from "./assets/icons8-medal.png";
 import card2 from "./assets/icons8-lightbulb.png";
 import card3 from "./assets/icons8-handshake.png";
@@ -29,6 +30,11 @@ const AboutUs = () => {
 
   return (
     <>
+      <Helmet>
+        <title>About Us | Merit And Value Awards Nigeria</title>
+        <meta name="description" content="Learn about the mission, vision, and team behind the Merit and Value Awards (MVA) Nigeria." />
+      </Helmet>
+
       <div className="flex">
         {/* Aside section */}
         <aside
@@ -254,7 +260,7 @@ const AboutUs = () => {
               <p className="mt-3 text-sm leading-7 text-gray-700">
                 Bachelor of Science (B.Sc.) Microbiology, University of
                 Maiduguri. Humanitarian, media consultant, content creator,
-                entrepreneur, influencer, and event planner with over 10 years of experience. 
+                entrepreneur, influencer, and event planner with over 10 years of experience.
                 Jane leads the overall strategic direction, programming, fundraising, and
                 partnerships of Merit and Value Awards, ensuring the platform
                 remains a credible, inclusive, and community-driven force for
@@ -354,10 +360,10 @@ const AboutUs = () => {
                 Digital and Structural Programmer, Khemsafe Institute of
                 Information Technology. Cybersecurity, TS Academy. AI and
                 Automation, TS Academy. Doctor of Veterinary Medicine (DVM),
-                University of Maiduguri. With his 13 years of extensive experience, 
-                Francis oversees the digital infrastructure, data integrity, 
-                and cybersecurity operations of Merit and Value Awards, ensuring the 
-                platform operatessecurely, transparently, and with the highest 
+                University of Maiduguri. With his 13 years of extensive experience,
+                Francis oversees the digital infrastructure, data integrity,
+                and cybersecurity operations of Merit and Value Awards, ensuring the
+                platform operatessecurely, transparently, and with the highest
                 standards of digital trust.
               </p>
             </div>

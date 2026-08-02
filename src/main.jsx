@@ -11,16 +11,8 @@ import Gallery from "./gallery.jsx";
 import ContactUs from "./contact.jsx";
 import PrivacyPolicy from "./privacyPolicy.jsx";
 import Register from "./register.jsx";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router";
-import React from "react";
-import ReactDOM from "react-dom/client";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -37,6 +29,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  </StrictMode>
 );
