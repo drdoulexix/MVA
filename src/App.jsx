@@ -9,6 +9,7 @@ import youtube from "./assets/icons8-youtube.png";
 import tiktok from "./assets/icons8-tiktok-50.png";
 import { Link } from "react-router-dom";
 import mvs from "./assets/clearMVS.png";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 export const list = [
   { name: "Home", path: "/" },
@@ -34,7 +35,7 @@ function App() {
   };
 
   return (
-    <>
+    <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}>
       <div className="flex">
         {/* Nav menu */}
         <aside
@@ -388,8 +389,8 @@ function App() {
           </div>
         </div>
         <span>&copy; 2026 Merit and value awards</span>
-      </footer>
-    </>
+     </footer>
+    </GoogleReCaptchaProvider>
   );
 }
 
