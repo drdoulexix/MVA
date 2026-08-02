@@ -4,7 +4,7 @@ import { list } from "./App.jsx";
 import "./index.css";
 import back from "./assets/back.png";
 import menu from "./assets/menu2.jpeg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 import card1 from "./assets/icons8-medal.png";
 import card2 from "./assets/icons8-lightbulb.png";

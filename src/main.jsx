@@ -11,7 +11,7 @@ import Gallery from "./gallery.jsx";
 import ContactUs from "./contact.jsx";
 import PrivacyPolicy from "./privacyPolicy.jsx";
 import Register from "./register.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([

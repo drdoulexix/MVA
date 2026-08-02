@@ -7,7 +7,7 @@ import tiktok from "./assets/icons8-tiktok-50.png";
 import "./index.css";
 import back from "./assets/back.png";
 import menu from "./assets/menu2.jpeg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useState } from "react";
 import { list } from "./App.jsx";
 import img1 from "./assets/img1.JPG";

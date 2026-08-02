@@ -4,7 +4,7 @@ import { list } from "./App.jsx";
 import "./index.css";
 import back from "./assets/back.png";
 import menu from "./assets/menu2.jpeg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import music from "./assets/icons8-music.png";
 import movie from "./assets/icons8-movie.png";
 import dress from "./assets/icons8-dress.png";

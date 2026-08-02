@@ -7,7 +7,7 @@ import ig from "./assets/icons8-ig.svg";
 import x from "./assets/icons8-x-50.png";
 import youtube from "./assets/icons8-youtube.png";
 import tiktok from "./assets/icons8-tiktok-50.png";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import mvs from "./assets/clearMVS.png";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
