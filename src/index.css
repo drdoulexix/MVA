@@ -22,6 +22,19 @@
   src: url(./assets/static/JosefinSans-Bold.ttf);
 }
 
+:root {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(251, 191, 36, 0.18), transparent 20%),
+    linear-gradient(180deg, #fffdf8 0%, #f8fafc 100%);
+}
+
 .bolder {
   font-family: Poppins-bold;
 }
@@ -37,6 +50,7 @@
 .light2 {
   font-family: Josefin-sans;
 }
+
 /* for the nav bar */
 .heading {
   @apply font-[Josefin-sans-bold] fixed top-0 left-0 p-3 z-30 bg-black bg-blend-overlay h-screen w-[150px] md:h-screen p-4;
@@ -65,11 +79,85 @@
 }
 
 .heroSection {
-  @apply h-[310px] w-full p-2 bg-[url('./assets/herobg.jpg')] bg-cover md:h-[500px];
+  @apply w-full p-2 bg-[url('./assets/herobg.jpg')] bg-cover bg-center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100svh;
+  height: 100svh;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.38));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 82px 20px 30px;
+  min-height: 100%;
+}
+
+.hero-ribbon {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: #fff7d6;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.hero-heading {
+  margin: 0;
+  font-family: Poppins-bold;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 1.12;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.38);
+}
+
+.hero-subtext {
+  margin: 0;
+  max-width: 760px;
+  color: #f8fafc;
+  font-family: Poppins-light;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 6px;
 }
 
 .button-theme {
-  @apply bg-[#FFD700] rounded-[20px] text-white p-3 text-sm mt-4 hover:text-black hover:bg-white hover:transition-all duration-200 ;
+  @apply bg-[#FFD700] rounded-[20px] text-white p-3 text-sm hover:text-black hover:bg-white hover:transition-all duration-200;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.3);
+}
+
+.button-theme.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.button-theme.secondary:hover {
+  color: #111827;
 }
 
 .menu {
@@ -78,33 +166,162 @@
 
 .cta {
   @apply mt-4 text-center w-full bg-[url('/src/assets/cta2.jpg')] bg-cover bg-center bg-black/20 h-[300px] md:bg-cover h-[300px] w-full;
+  position: relative;
 }
 
-.card{
-  @apply w-[300px] h-[350px] rounded-[15px] shadow-xl shadow-[5px_5px_10px_20px_40px_#FFFF] ;
+.cta-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.35), rgba(245, 158, 11, 0.2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+.cta-button {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 190px;
+  padding: 14px 16px;
+  border: 2px solid rgba(17, 24, 39, 0.15);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.24);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 14px;
+  width: min(880px, 100%);
+  margin-top: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-stat {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(15, 23, 42, 0.48);
+  border-radius: 18px;
+  padding: 14px 12px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.28);
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    min-height: 88svh;
+    height: 88svh;
+  }
+
+  .hero-content {
+    justify-content: flex-start;
+    padding-top: 88px;
+    gap: 10px;
+  }
+
+  .hero-heading {
+    max-width: 260px;
+    font-size: 1.7rem;
+  }
+
+  .hero-subtext {
+    max-width: 290px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-ribbon {
+    font-size: 0.66rem;
+    padding: 6px 12px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 8px;
+    gap: 8px;
+  }
+
+  .hero-stat {
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+}
+
+.hero-stat span {
+  display: block;
+  font-family: Poppins-bold;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.hero-stat small {
+  color: #fdf2f8;
+  font-family: Poppins-light;
+}
+
+.intro-section {
+  padding: 56px 24px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: Poppins-bold;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  text-align: center;
+  margin: 0 0 22px;
+  color: #0f172a;
+}
+
+.intro-panel {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 26px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(239, 246, 255, 0.9));
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.09);
+}
+
+.section-copy {
+  font-family: Josefin-sans;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  line-height: 1.8;
+  margin: 0;
+  color: #334155;
+}
+
+.card {
+  @apply w-[300px] h-[350px] rounded-[15px] shadow-xl shadow-[5px_5px_10px_20px_40px_#FFFF];
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 /* Card divs is for the container holding all the cards */
-.card-divs{
-@apply grid justify-center items-center text-center gap-[30px] md:flex 
+.card-divs {
+  @apply grid justify-center items-center text-center gap-[30px] md:flex;
 }
 
-.card-img{
-  @apply flex justify-center rounded-[15px] ;
+.card-img {
+  @apply flex justify-center rounded-[15px];
 }
 
-
-.general-card{
+.general-card {
   @apply p-[10px] rounded-[15px] h-[350px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
 }
 
-.general-card2{
+.general-card2 {
   @apply p-[20px] rounded-[15px] h-[200px] w-[200px] shadow-lg shadow-[0_5px_70px_70px_70px_#FFFF];
 }
 
 /* For the stardom page alone */
 
-.stardomcta{
-@apply bg-[url('/src/assets/stardombg.JPG')] bg-cover bg-center;
+.stardomcta {
+  @apply bg-[url('/src/assets/stardombg.JPG')] bg-cover bg-center;
 }
 

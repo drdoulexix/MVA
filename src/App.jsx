@@ -65,42 +65,52 @@ function App() {
             <img src={menu} alt="Menu" className="ml-3" />
           </button>
 
-
           <img
             src={logo}
             alt="Logo"
             className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]"
           />
-          <div className="text-white text-center bolder md:h-[400px] md:grid">
-            <h1 className="text-2xl md:text-3xl">
-              Merits And value awards
-              <br />
-              <span className="light text-md ">
-                Celebrating Excellence, Inspiring change
-              </span>
-            </h1>
 
-            <span className="light md:text-[20px]  ">
-              Recognising outstanding talent,
-              <br />
-              creativitiy and inclusion in Maiduguri
-              <br />
-              and beyond.
-            </span>
-            <div className="h-[170px] mt-[60px]">
-              <Link to="/nominate" className="button-theme bolder  ">
+          <div className="hero-content">
+            <div className="hero-ribbon">Celebrating Excellence, Inspiring change</div>
+            <h1 className="hero-heading">
+              Merits And value awards
+            </h1>
+            <p className="hero-subtext">
+              Recognising outstanding talent, creativitiy and inclusion in
+              Maiduguri and beyond.
+            </p>
+            <div className="hero-actions">
+              <Link to="/nominate" className="button-theme bolder">
                 Nominate someone
               </Link>
+              <Link to="/aboutUs" className="button-theme secondary bolder">
+                Discover our story
+              </Link>
+            </div>
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <span>2026</span>
+                <small>Annual ceremony</small>
+              </div>
+              <div className="hero-stat">
+                <span>Talent</span>
+                <small>Spotlight & recognition</small>
+              </div>
+              <div className="hero-stat">
+                <span>Inclusion</span>
+                <small>Open to every story</small>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
       {/* Intro section */}
-      <section className="mt-[50px] mb-[50px] text-center w-full">
-        <h1 className="bolder2  text-3xl">Who we are </h1>
-        <div className="flex w-full h-full justify-center text-[20px] p-[30px] md:text-2xl">
-          <p className=" light2 ">
+      <section className="intro-section">
+        <h1 className="section-title">Who we are</h1>
+        <div className="intro-panel">
+          <p className="section-copy">
             Merits and Value awards is a prestigious platform committed to
             spreading, healing and promoting resilience and celebrating
             excellence, creativity, culture and innovation.
@@ -118,8 +128,8 @@ function App() {
       {/*CTA section*/}
 
       <section className="cta">
-        <div className="w-full h-full backdrop-blur-[3px] flex justify-center items-center">
-          <button className=" bg-white rounded-[10px] w-[170px] text-black p-3 hover:cursor-pointer hover:border-2 border-black transition-all duration-100">
+        <div className="cta-overlay">
+          <button className="cta-button">
             <Link
               to="/aboutUs"
               className="hover:text-shadow-sm text-shadow-white transition-all duration-200"
@@ -133,9 +143,7 @@ function App() {
       {/* Highlights */}
 
       <section className="p-[40px] bg-[#F9FAFB]">
-        <h1 className="bolder text-3xl text-center mb-[40px]">
-          HIGHLIGHTS AND QUICK STATS
-        </h1>
+        <h1 className="section-title">HIGHLIGHTS AND QUICK STATS</h1>
         <div className="card-divs">
           <Link to="/awards">
             <div className="card bg-[#FEF3C7]">
@@ -158,7 +166,6 @@ function App() {
               </div>
             </div>
           </Link>
-          {/* HEROICONS OR LUCIDE FOR THE ICONS */}
           <Link to="/nominate">
             <div className="card bg-slate-100">
               <div className="card-img bg-[#DBEAFE]">
