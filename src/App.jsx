@@ -77,7 +77,8 @@ function App() {
               Merits And value awards
             </h1>
             <p className="hero-subtext">
-              Recognising outstanding talent, creativitiy and inclusion in Nigeria.
+              Recognising outstanding talent, creativitiy and inclusion in
+              Nigeria and beyond.
             </p>
             <div className="hero-actions">
               <Link to="/nominate" className="button-theme bolder">
