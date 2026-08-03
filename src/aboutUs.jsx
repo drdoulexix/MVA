@@ -69,7 +69,7 @@ const AboutUs = () => {
             className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]"
           />
           <header className="text-center mt-[50px] text-2xl bolder text-white sm: mt-">
-            <h1> About Merits and value Awards</h1>
+            <h1> About Merit and value Awards</h1>
             <br />
             <h2 className="light text-[17px]">
               Our Story, Our Mission, Our Vision
