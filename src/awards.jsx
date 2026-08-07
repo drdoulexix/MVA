@@ -146,7 +146,7 @@ const Awards = () => {
         </div>
       </section>
       {/* Nominee selection */}
-      <section className="mt-[40px] bg-black text-white text-center">
+      <section className="mt-[40px] bg-black/70 text-white text-center">
         <div className="grid">
           <div>
             <h1 className="bolder mt-[40px] text-3xl mb-[30px]">

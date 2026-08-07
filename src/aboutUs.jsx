@@ -259,8 +259,8 @@ const AboutUs = () => {
               </p>
               <p className="mt-3 text-sm leading-7 text-gray-700">
                 Bachelor of Science (B.Sc.) Microbiology, University of
-                Maiduguri. Humanitarian, media consultant, content creator,
-                entrepreneur, influencer, and event planner with over 10 years of experience.
+                Maiduguri. Humanitarian, entrepreneur, and influencer. With over 10 years 
+                of experience in media consultion, content creation, and event planning,
                 Jane leads the overall strategic direction, programming, fundraising, and
                 partnerships of Merit and Value Awards, ensuring the platform
                 remains a credible, inclusive, and community-driven force for
@@ -310,7 +310,7 @@ const AboutUs = () => {
               <p className="mt-3 text-sm leading-7 text-gray-700">
                 Bachelor of Science (B.Sc.) Nursing, University of Maiduguri.
                 Digital and data management professional with 6 years of
-                experience. She oversees all digital operations and technical
+                experience. Mshelmbula oversees all digital operations and technical
                 setup during Merit and Value Awards events, while managing the
                 complete data ecosystem of the platform — including the
                 records, profiles, and information of all artists, nominees,
@@ -360,7 +360,7 @@ const AboutUs = () => {
                 Digital and Structural Programmer, Khemsafe Institute of
                 Information Technology. Cybersecurity, TS Academy. AI and
                 Automation, TS Academy. Doctor of Veterinary Medicine (DVM),
-                University of Maiduguri. With his 13 years of extensive experience,
+                University of Maiduguri. With his 13 years of extensive experience in IT,
                 Francis oversees the digital infrastructure, data integrity,
                 and cybersecurity operations of Merit and Value Awards, ensuring the
                 platform operatessecurely, transparently, and with the highest

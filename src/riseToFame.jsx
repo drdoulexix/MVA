@@ -33,13 +33,63 @@ const Stardom = () => {
     setSlide(!slide);
   };
 
+  const categories = [
+    {
+      title: "Music, rapping, instrumentals",
+      text: "Showcase vocal and instrumental talent across original and cover works.",
+      icon: music,
+      accent: "bg-amber-400",
+    },
+    {
+      title: "Dancing",
+      text: "Solo or group performances judged on creativity, technique and stage presence.",
+      icon: dance,
+      accent: "bg-orange-400",
+    },
+    {
+      title: "Filming and storytelling",
+      text: "Short films and visual stories evaluated for narrative, cinematography and impact.",
+      icon: movie,
+      accent: "bg-sky-400",
+    },
+    {
+      title: "Fashion design",
+      text: "Designers present original collections highlighting creativity and craftsmanship.",
+      icon: dress,
+      accent: "bg-rose-300",
+    },
+  ];
+
+  const participationPoints = [
+    "Youths aged 15 – 29",
+    "Persons living with disabilities",
+    "Creative talents seeking exposure and recognition",
+    "Entertainment enthusiasts and aspiring professionals",
+  ];
+
+  const accessibilityPoints = [
+    { icon: wheelchair, label: "Wheelchair-accessible venue" },
+    { icon: metal, label: "Sign language interpreters" },
+    { icon: bell, label: "Accessible facilities throughout" },
+    { icon: handshake, label: "Trained support staff and volunteers" },
+  ];
+
+  const benefits = [
+    { icon: tv, title: "Media exposure\n(Social media, TV)" },
+    { icon: mic, title: "Live performance opportunities" },
+    { icon: brand, title: "Brand Recognition" },
+    { icon: cash, title: "Cash prizes and awards" },
+    { icon: handshake, title: "Endorsement and sponsorship deals" },
+    { icon: star, title: "Talent management opportunities" },
+    { icon: compass, title: "Confidence, visibility and clear direction" },
+  ];
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
       <div className="flex">
-        {/* Aside section */}
         <aside className={`heading fixed md:static ${slide ? "slide-in" : "slide-out"}`}>
           <ul className="list">
-            <button className="menu " onClick={toggleSlide}>
+            <button className="menu" onClick={toggleSlide}>
               <img src={back} alt="Back" />
             </button>
             {list.map((item, index) => (
@@ -55,123 +105,112 @@ const Stardom = () => {
         <div className="w-full">
           <section className="bg-black px-4 py-4 text-white md:px-6">
             <button
-              className="fixed top-0 left-0 bg-[#999999] rounded-[50%] z-[20] md:cursor-pointer fixed h-[45px] w-[50px] "
+              className="fixed top-0 left-0 z-[20] h-[45px] w-[50px] rounded-[50%] bg-[#999999] md:cursor-pointer"
               onClick={toggleSlide}
             >
               <img src={menu} alt="Menu" className="ml-3" />
             </button>
 
-
-            <img src={logo} alt="Logo" className="absolute top-0 right-0 h-[35px] md:h-[55px] p-2 z-[50]" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="absolute right-3 top-3 z-30 h-[35px] md:h-[55px]"
+            />
 
             <div className="pt-14 text-center md:pt-8">
-              <div className="bolder p-2 text-center">
-                <h1 className="text-2xl md:text-3xl">
-                  Rise to Fame — Talent Hunt 2027
-                </h1>
-                <span>Gateway to Merit and Value Awards</span>
-              </div>
-              <div className="flex justify-center">
-                <Link to="/register" className="button-theme bolder">Register now</Link>
+              <p className="mb-3 inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-sm text-amber-400">
+                Talent Hunt 2027
+              </p>
+              <h1 className="mb-2 text-3xl font-bold text-amber-400 md:text-4xl">
+                Rise to Fame — Talent Hunt 2027 (Coming Soon)
+              </h1>
+              <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-300 md:text-base">
+                Gateway to Merit and Value Awards
+              </p>
+              <div className="mt-6 flex justify-center">
+                <Link to="/register" className="rounded-full bg-amber-500 px-6 py-3 font-semibold text-black transition hover:bg-amber-400">
+                  Register now
+                </Link>
               </div>
             </div>
           </section>
 
           <main className="bg-[radial-gradient(circle_at_top,_rgba(255,180,0,0.16),_transparent_45%)] px-4 py-10 md:px-8 lg:px-12">
-            {/* About the event */}
-            <section className=" p-[30px]">
-              <h1 className="mb-[20px] text-white bolder2 text-center text-2xl md:text-3xl">
-                About the event
-              </h1>
-              <p className="light2 text-center text-xl md:text-2xl text-white">
-                Merit and Value Awards proudly presents
-                <b> “Rise to Fame” Talent Hunt 2027</b> — a groundbreaking and
-                inclusive platform designed to discover, nurture, and celebrate
-                exceptional talents in Maiduguri.This initiative merges two powerful
-                visions: discovering emerging stars and promoting inclusion by
-                creating equal opportunities for persons living with disabilities.
-                More than just a competition, Rise to Fame is a life-changing movement
-                — transforming raw talent into recognised excellence, while redefining
-                societal perceptions about ability, creativity, and success.
+            <section className="mx-auto max-w-6xl rounded-[28px] border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/40 md:p-10">
+              <div className="mb-6 text-center">
+                <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                  About the event
+                </p>
+                <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">
+                  A platform that discovers talent and celebrates inclusion
+                </h2>
+              </div>
+              <p className="mx-auto max-w-4xl text-base leading-8 text-neutral-300 md:text-lg">
+                Merit and Value Awards proudly presents “Rise to Fame” Talent Hunt 2027 — a groundbreaking and inclusive platform designed to discover, nurture, and celebrate exceptional talents in Maiduguri. This initiative merges two powerful visions: discovering emerging stars and promoting inclusion by creating equal opportunities for persons living with disabilities. More than just a competition, Rise to Fame is a life-changing movement — transforming raw talent into recognised excellence, while redefining societal perceptions about ability, creativity, and success.
               </p>
             </section>
-            {/* Competition Categories */}
-            <section className="bg-blue-100 text-slate-800">
-              <header className="p-3">
-                <h1 className=" text-slate-700 mb-[20px] mt-[30px] bolder text-center text-2xl md:text-3xl">
-                  Competition Categories
-                </h1>
-                <h2 className="mb-[20px] text-slate-500 text-center text-xl md:text-2xl">
+
+            <section className="mx-auto mt-10 max-w-6xl rounded-[28px] border border-neutral-800 bg-neutral-900/80 p-6 md:p-8">
+              <div className="mb-6 text-center">
+                <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                  Competition categories
+                </p>
+                <h2 className="mt-2 text-3xl font-bold text-white">
                   What you can compete in
                 </h2>
-              </header>
-              <div className="mt-6 max-w-6xl mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 items-stretch">
-                <div className="bg-yellow-300 rounded-[20px] p-6 flex flex-col items-center text-center shadow-md">
-                  <img src={music} alt="Music" className="h-12 w-12 object-contain mb-3" />
-                  <h3 className="bolder2">Music, rapping, instrumentals</h3>
-                  <p className="mt-2 text-[#334155] leading-6">Showcase vocal and instrumental talent across original and cover works.</p>
-                </div>
-
-                <div className="bg-orange-400 rounded-[20px] p-6 flex flex-col items-center text-center shadow-md">
-                  <img src={dance} alt="Dance" className="h-12 w-12 object-contain mb-3" />
-                  <h3 className="bolder2">Dancing</h3>
-                  <p className="mt-2 text-[#334155] leading-6">Solo or group performances judged on creativity, technique and stage presence.</p>
-                </div>
-
-                <div className="bg-blue-300 rounded-[20px] p-6 flex flex-col items-center text-center shadow-md">
-                  <img src={movie} alt="Filming" className="h-12 w-12 object-contain mb-3" />
-                  <h3 className="bolder2">Filming and storytelling</h3>
-                  <p className="mt-2 text-[#334155] leading-6">Short films and visual stories evaluated for narrative, cinematography and impact.</p>
-                </div>
-
-                <div className="bg-red-300 rounded-[20px] p-6 flex flex-col items-center text-center shadow-md">
-                  <img src={dress} alt="Fashion" className="h-12 w-12 object-contain mb-3" />
-                  <h3 className="bolder2">Fashion design</h3>
-                  <p className="mt-2 text-[#334155] leading-6">Designers present original collections highlighting creativity and craftsmanship.</p>
-                </div>
               </div>
 
-              <div className="text-center mt-5 p-3">
-                <span className="text-slate-600">
-                  Open to participants with or without disabilities
-                </span>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                {categories.map((category, index) => (
+                  <div
+                    key={index}
+                    className={`rounded-[20px] border border-neutral-800 p-6 text-center shadow-lg shadow-black/20 ${category.accent}`}
+                  >
+                    <img src={category.icon} alt={category.title} className="mx-auto mb-3 h-12 w-12 object-contain" />
+                    <h3 className="text-lg font-semibold text-slate-900">{category.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-800">{category.text}</p>
+                  </div>
+                ))}
               </div>
+
+              <p className="mt-6 text-center text-sm text-neutral-400">
+                Open to participants with or without disabilities
+              </p>
             </section>
 
-            {/* Who can participate */}
-
-            <section className="p-4 light2 text-slate-800">
-              <h1 className=" text-slate-300 text-center mb-[20px] mt-[30px] bolder2 text-2xl md:text-3xl">
-                Who can Participate
-              </h1>
-
-              <div className="flex justify-center items-center">
-                <ul className="grid grid-col-1 list-disc list-inside text-slate-300 text-start gap-3 text-xl md:3xl">
-                  <li>Youths aged 15 – 29</li>
-                  <li>Persons living with disabilities</li>
-                  <li>Creative talents seeking exposure and recognition</li>
-                  <li>Entertainment enthusiasts and aspiring professionals</li>
+            <section className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-[24px] border border-neutral-800 bg-neutral-900 p-6">
+                <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                  Who can participate
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-white">A space for emerging talent</h2>
+                <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+                  {participationPoints.map((point, index) => (
+                    <li key={index} className="flex gap-3">
+                      <span className="mt-1 text-amber-400">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-            </section>
 
-            <div className="bg-gray-200 p-6 text-slate-800">
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-slate-600 text-center mb-6 mt-4 bolder2 text-2xl md:text-3xl">Event Structure</h2>
-
-                <div className="grid gap-6 md:grid-cols-2 text-xl">
-                  <article className="bg-white rounded-lg p-6 shadow-sm">
-                    <h3 className="bolder2 text-slate-700"><b>Stage 1: Registrations and auditions</b></h3>
-                    <ul className="light2 list-disc list-inside mt-3">
+              <div className="rounded-[24px] border border-neutral-800 bg-neutral-900 p-6">
+                <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                  Event structure
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-white">The journey from registration to finale</h2>
+                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  <article className="rounded-2xl border border-neutral-800 bg-neutral-950/70 p-5">
+                    <h3 className="text-lg font-semibold text-white">Stage 1: Registrations and auditions</h3>
+                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-neutral-400">
                       <li>Online and physical registration available</li>
                       <li>Online audition sessions</li>
                       <li>Screening by a panel of professional judges</li>
                     </ul>
                   </article>
-
-                  <article className="bg-white rounded-lg p-6 shadow-sm">
-                    <h3 className="bolder2 text-slate-700"><b>Stage 2: Grand Finale</b></h3>
-                    <ul className="light2 list-disc list-inside mt-3">
+                  <article className="rounded-2xl border border-neutral-800 bg-neutral-950/70 p-5">
+                    <h3 className="text-lg font-semibold text-white">Stage 2: Grand Finale</h3>
+                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-neutral-400">
                       <li>Live performances by finalists</li>
                       <li>Celebrity judges and guest artists</li>
                       <li>Red carpet experience</li>
@@ -180,115 +219,85 @@ const Stardom = () => {
                   </article>
                 </div>
               </div>
-            </div>
+            </section>
 
-            <section className="p-6 text-slate-800">
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-slate-300 text-center mt-2 bolder2 text-2xl md:text-3xl">Built for everyone</h2>
+            <section className="mx-auto mt-10 max-w-6xl rounded-[28px] border border-neutral-800 bg-neutral-900/80 p-6 md:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                    Built for everyone
+                  </p>
+                  <h2 className="mt-2 text-3xl font-bold text-white">
+                    Accessibility is part of the experience
+                  </h2>
+                  <p className="mt-4 text-base leading-7 text-neutral-300">
+                    Rise to Fame is committed to full accessibility. Our event will provide:
+                  </p>
+                  <ul className="mt-5 space-y-3">
+                    {accessibilityPoints.map((item, index) => (
+                      <li key={index} className="flex items-center gap-3 rounded-2xl border border-neutral-800 bg-neutral-950/70 px-4 py-3 text-sm text-neutral-300">
+                        <img src={item.icon} alt={item.label} className="h-6 w-6" />
+                        <span>{item.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <div className="mt-6 grid gap-6 md:grid-cols-2 items-start">
-                  <div className="flex flex-col gap-4">
-                    <p className="text-xl text-center text-slate-300 md:text-left">Rise to Fame is committed to full accessibility. Our event will provide:</p>
-                    <ul className="grid gap-3 md:max-w-md mx-auto md:mx-0">
-                      <li className="inline-flex text-slate-300 gap-3 items-center">
-                        <img src={wheelchair} alt="wheelchair" className="h-6 w-6" />
-                        <span>Wheelchair-accessible venue</span>
-                      </li>
-                      <li className="inline-flex text-slate-300 gap-3 items-center">
-                        <img src={metal} alt="sign language" className="h-6 w-6" />
-                        <span>Sign language interpreters</span>
-                      </li>
-                      <li className="inline-flex text-slate-300 gap-3 items-center">
-                        <img src={bell} alt="accessible facilities" className="h-6 w-6" />
-                        <span>Accessible facilities throughout</span>
-                      </li>
-                      <li className="inline-flex text-slate-300 gap-3 items-center">
-                        <img src={handshake} alt="support staff" className="h-6 w-6" />
-                        <span>Trained support staff and volunteers</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-lg p-6 shadow-sm">
-                    <p className="text-center md:text-left text-lg">We prioritise accessibility in venue design, programming, and support services so every participant can fully engage and perform.</p>
-                  </div>
+                <div className="rounded-[24px] border border-amber-500/20 bg-gradient-to-br from-amber-500/10 to-neutral-950 p-6">
+                  <p className="text-center text-lg leading-8 text-neutral-200 md:text-left">
+                    We prioritise accessibility in venue design, programming, and support services so every participant can fully engage and perform.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <section className="p-6 bg-blue-100">
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-slate-600 text-center mt-2 bolder2 text-2xl md:text-3xl">What participants will gain</h2>
+            <section className="mx-auto mt-10 max-w-6xl rounded-[28px] border border-neutral-800 bg-neutral-900/80 p-6 md:p-8">
+              <div className="mb-6 text-center">
+                <p className="text-sm uppercase tracking-[0.35em] text-amber-400">
+                  What participants will gain
+                </p>
+                <h2 className="mt-2 text-3xl font-bold text-white">
+                  Opportunities that open doors
+                </h2>
+              </div>
 
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="bg-blue-500 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={tv} alt="TV" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Media exposure<br />(Social media, TV)</span>
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {benefits.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`rounded-[20px] p-4 text-center shadow-lg shadow-black/20 ${index % 2 === 0 ? "bg-neutral-950/80 text-white" : "bg-amber-400/90 text-slate-900"}`}
+                  >
+                    <img src={item.icon} alt={item.title} className="mx-auto mb-3 h-10 w-10 object-contain" />
+                    <span className="text-sm font-semibold leading-6 whitespace-pre-line">{item.title}</span>
                   </div>
-
-                  <div className="bg-orange-400 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={mic} alt="Mic" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Live performance opportunities</span>
-                  </div>
-
-                  <div className="bg-orange-100 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={brand} alt="Brand" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Brand Recognition</span>
-                  </div>
-
-                  <div className="bg-green-100 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={cash} alt="Cash" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Cash prizes and awards</span>
-                  </div>
-
-                  <div className="bg-red-200 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={handshake} alt="Handshake" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Endorsement and sponsorship deals</span>
-                  </div>
-
-                  <div className="bg-black rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={star} alt="Star" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#ffffff]">Talent management opportunities</span>
-                  </div>
-
-                  <div className="bg-green-300 rounded-[20px] p-4 flex flex-col items-center text-center">
-                    <img src={compass} alt="Compass" className="h-10 mb-3" />
-                    <span className="bolder2 text-[#334155]">Confidence, visibility and clear direction</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </section>
 
-            {/* CTA section */}
+            <section className="mx-auto mt-10 max-w-6xl rounded-[28px] border border-amber-500/20 bg-gradient-to-br from-amber-500/10 to-neutral-900 p-6 text-center text-white md:p-8">
+              <h2 className="text-3xl font-bold text-amber-400 md:text-4xl">
+                Ready to rise?
+              </h2>
 
-            <section className="bg-gray-700 p-4 text-center text-white">
-              <h1 className=" mt-[30px] bolder text-2xl md:text-3xl">
-                Ready to rise ?
-              </h1>
-
-              <p className="mt-3 light">
-                Don’t miss your chance to step into the spotlight. Registration is
-                open to all eligible participants.
+              <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-neutral-300">
+                Don’t miss your chance to step into the spotlight. Registration is open to all eligible participants.
               </p>
-              <div className="grid justify-center items-center md:flex gap-5">
-                <Link to="/register" className="button-theme bolder">Register</Link>
-                {/* <Link className=" bg-white bolder text-black p-3 rounded-[20px]">
-            Accessibility
-          </Link> */}
+              <div className="mt-6 flex flex-wrap justify-center gap-4">
+                <Link to="/register" className="rounded-full bg-amber-500 px-6 py-3 font-semibold text-black transition hover:bg-amber-400">
+                  Register
+                </Link>
               </div>
             </section>
-
           </main>
 
-          {/* Footer */}
-          <footer className="bg-black text-white text-center p-5">
-            <div className="p-[40px]  grid gap-[30px] justify-center items-center md:flex">
-              <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
+          <footer className="bg-black p-5 text-center text-white">
+            <div className="grid items-center justify-center gap-[30px] p-[40px] md:flex">
+              <div className="flex w-[430px] flex-col items-center gap-[30px] text-center">
                 <img src={logo} alt="Logo" className="h-[30px]" />
                 <span>Celebratng excellence and inspiring change</span>
               </div>
 
-              <div className="w-[430px] flex flex-col gap-[30px] text-center items-center">
+              <div className="flex w-[430px] flex-col items-center gap-[30px] text-center">
                 <ul className="grid gap-[10px]">
                   {list.map((item, index) => (
                     <li key={index}>
@@ -299,38 +308,25 @@ const Stardom = () => {
                   ))}
                 </ul>
                 <div className="inline-flex gap-[30px]">
-                  <a href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA=="
-                    target="_blank"
-                  >
+                  <a href="https://www.instagram.com/meritandvalueawards?igsh=MXA4NmpwczN0M2c3dA==" target="_blank">
                     <img src={ig} alt="Instagram" className="h-[30px] md:h-[30px]" />
                   </a>
-                  <a href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr"
-                    target="_blank"
-                  >
+                  <a href="https://www.facebook.com/share/1D8MB5LWgH/?mibextid=wwXIfr" target="_blank">
                     <img src={fb} alt="Facebook" className="h-[30px] md:h-[30px]" />
                   </a>
-                  <a href="https://x.com/mvaevent"
-                    target="_blank"
-                  >
+                  <a href="https://x.com/mvaevent" target="_blank">
                     <img src={x} alt="X" className="h-[30px] md:h-[30px]" />
                   </a>
-                  <a href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs"
-                    target="_blank"
-                  >
+                  <a href="https://www.tiktok.com/@_meritandvalueawards_?_r=1&_t=ZS-98KU4UeRLFs" target="_blank">
                     <img src={tiktok} alt="tiktok" className="h-[30px] md:h-[30px]" />
                   </a>
-                  <a href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3"
-                    target="_blank"
-                  >
-                    <img
-                      src={youtube}
-                      alt="youtube"
-                      className="h-[30px] md:h-[30px]"
-                    />
+                  <a href="https://youtube.com/@meritandvalueawards?si=eawtqPzlaQw77ym3" target="_blank">
+                    <img src={youtube} alt="youtube" className="h-[30px] md:h-[30px]" />
                   </a>
-
                 </div>
-                <div><Link to="/privacyPolicy">Privacy Policy</Link></div>
+                <div>
+                  <Link to="/privacyPolicy">Privacy Policy</Link>
+                </div>
               </div>
             </div>
             <span>&copy; 2026 Merit and value awards</span>
